@@ -1,3 +1,4 @@
+const rqst=require('./performRequest.js');
 function createExportRestAPI(connId,callback){
     var expBody = {
         name: "sampleMockyRESTxport2_V1",
@@ -61,13 +62,8 @@ function createExportRestAPI(connId,callback){
         json:true
     };
 
-    var request = require("request");
-    request(opts, function(err, res) {
-        if(err) {
-            return callback(err)
-        }
-        return callback(null,res.body._id);
-    });
+    rqst(opts,callback);
+   
 }
 
 module.exports=createExportRestAPI;

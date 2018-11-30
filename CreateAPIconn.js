@@ -1,3 +1,4 @@
+const rqst=require('./performRequest.js');
 function createRESTAPIConnection(callback) {
     var body =
     {
@@ -42,20 +43,13 @@ function createRESTAPIConnection(callback) {
             }
         ],
         auth: {
-            bearer: '0f6b************b1f07dff47f'
+            bearer: '0f6b7cccd72b********1f07dff47f'
         },
         body: body,
         json: true
     };
-    var id;
-    var request = require("request");
-    request(opts, function (err, res) {
-        if (err) {
-            return callback(err)
-        }
-        id=res.body._id;
-        return callback(null, id);
-    });
+    
+    rqst(opts,callback);
     
 }
 

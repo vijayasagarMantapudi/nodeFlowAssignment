@@ -4,6 +4,7 @@ const createExport = require('./CreateAPIExport.js')
 const createNSCustomer = require('./NScustomerImport.js')
 const createSalesOrder = require('./createNS_SO_import.js')
 const createFlow = require('./createFlow.js')
+
 const async = require('async')
 function callback(err, res) {
     if (err) {
@@ -60,11 +61,3 @@ mainFlow(obj,function(err){
         return callback(null,'success');
     });
 });
-/**
-{ rest: '5bfe5bbf1b33704a14352514',
-ns: '5bfe5bbf1b33704a14352516' }
-export ID: 5bfe5bc2cd76d831543b3c77
-import ID NS Customer: 5bfe5bc21b33704a14352519
-import ID of NS SO: 5bfe5bc31b33704a1435251b
- * 
- * */

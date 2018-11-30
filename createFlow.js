@@ -1,3 +1,4 @@
+const rqst=require('./performRequest.js');
 function createFlowAPItoNS(id,callback){
     var bod = {
         name: "TestAPItoNSSalesOrderFlow_v1",
@@ -49,14 +50,7 @@ function createFlowAPItoNS(id,callback){
         json:true
     };
 
-    var request = require("request");
-    request(opts, function (err, res) {
-        if (err) {
-            return callback(err)
-        }
-        id=res.body._id;
-        return callback(null, id);
-    });
+    rqst(opts,callback);
 
 }
 module.exports=createFlowAPItoNS;

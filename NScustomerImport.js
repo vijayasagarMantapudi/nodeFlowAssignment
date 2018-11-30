@@ -1,3 +1,4 @@
+const rqst=require('./performRequest.js');
 function createNScustImport(connId,callback) {
     var impBody = {
         name: "Ns import from node_V1",
@@ -76,13 +77,7 @@ function createNScustImport(connId,callback) {
         json:true
     };
 
-    var request = require("request");
-    request(opts, function(err, res) {
-        if(err) {
-            return callback(err)
-        }
-        return callback(null,res.body._id)
-    });
+    rqst(opts,callback);
 
 }
 module.exports=createNScustImport;
