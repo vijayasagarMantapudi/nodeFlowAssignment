@@ -1,3 +1,4 @@
+const rqst=require('./performRequest.js');
 function createNSConnection(callback) {
     var body = 
         {
@@ -36,14 +37,7 @@ function createNSConnection(callback) {
         json:true
     };
 
-    var request = require("request");
-    request(opts, function(err, res) {
-        if(err) {
-            return callback(err)
-        }
-        id=res.body._id;
-        return callback(null, id);
-    });
+    rqst(opts,callback);
 
 }
 
