@@ -31,7 +31,7 @@ function createNSConnection(callback) {
             }
           ],
         auth: {
-            bearer: '0f6b************b1f07dff47f'
+            bearer: '************'
         },
         body:body,
         json:true
